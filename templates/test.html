@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if request.user.is_authenticated %}
+    <b>The books that you have rated are:</b>
+
+    <br>
+    {% for i in rated %}
+        {{ i.book.bookTitle }}   {{ i.rating }}  {{ i.book.ISBN }}<br>
+    {% endfor %}
+
+    <b>The books that are recommended to you are:</b><br>
+{#    <br>#}
+    <ol>
+    {% for i in recommended %}
+        <li><a href="{% url 'book_detail' i.id %}">{{ i.bookTitle }}</a></li>
+{#        <li>{{ i }}</li>#}
+    {% endfor %}
+    </ol>
+{% else %}
+   <b> <p>Top 10 rated book in your region:</p></b>
+{% endif %}
+
+{#<a href="{% url 'book_detail' recommended.id%}">{{ recommended }}</a> <br>#}
+{% endblock %}

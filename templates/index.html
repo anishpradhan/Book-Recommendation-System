@@ -1,0 +1,30 @@
+{% extends 'search.html' %}
+{% block search_content %}
+
+{#{% include 'search.html' %}#}
+    {% if request.user.is_authenticated %}
+        <h2>The books that you have rated are:</h2>
+        {% if rated %}
+            {% for i in rated %}
+                {{ i.book.bookTitle }}   {{ i.rating }}  {{ i.book.ISBN }}<br>
+            {% endfor %}
+        {% else %}
+            <h4>Sorry! You haven't rated any books</h4>
+        {% endif %}
+        <hr>
+        <h2>The books that are recommended to you are:</h2>
+        {% if rated %}
+            <ol>
+                {% for i in recommended %}
+                    <li><a href="{% url 'book_detail' i.id %}">{{ i.bookTitle }}</a></li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <h4>No books to recommend.</h4>
+        {% endif %}
+    {% else %}
+        <b><p>Top 10 rated book in your region:</p></b>
+    {% endif %}
+
+    {#<a href="{% url 'book_detail' recommended.id%}">{{ recommended }}</a> <br>#}
+{% endblock %}

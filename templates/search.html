@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div style="width: 445px; height: 35px;margin-left: 60%;">
+        <form method="GET" action="{% url 'search' %}">
+            <input type="text" name="q" id="id_q" placeholder="Search..." style="width: 445px; height: 27px">
+        </form>
+    </div>
+    <hr>
+    <script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}";
+    </script>
+    {% if books %}
+        <ol>
+            {% for book in books %}
+                <li>
+                    {% include 'search_result.html' with item=book %}
+                </li>
+
+            {% endfor %}
+        </ol>
+    {% else %}
+        {% include 'search_result.html' with query=query %}
+
+    {% endif %}
+
+    {% block search_content %}
+    {% endblock %}
+
+{% endblock %}

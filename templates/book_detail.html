@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRS</title>
+</head>
+<body>
+{{ book.ISBN }}<br>
+{{ book.bookTitle }}<br>
+{{ book.bookAuthor }}<br>
+<form method="post" action="{% url 'rating_form' book.id%}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit">
+</form>
+
+{#<form method="post" action="{% url 'rating_form' book.id%}" id="feedback">#}
+{#    {% csrf_token %}#}
+{#    Rate <label>#}
+{#    <input type="number" id="rating" name="rating">#}
+{#</label><br>#}
+{#    Feedback <label>#}
+{#    <textarea name="feedback" id="feedback"></textarea>#}
+{#</label><br>#}
+{#    <button type="submit">Send</button>#}
+
+</body>
+</html>
