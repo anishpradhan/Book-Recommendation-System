@@ -23,13 +23,13 @@ You have two choices for downloading the source code – downloading a zip file 
 
 * *Downloading a zip file*
 
-    From the main [BRS directory on GitHub](https://github.com/anishpradhan/BRS-Project.git) click the green “Clone or download” button and choose to download a zip file to your computer.
+    From the main [BRS directory on GitHub](https://github.com/anishpradhan/BRS.git) click the green “Clone or download” button and choose to download a zip file to your computer.
 
 * *Using Git*
 
     Clone this repository or create a fork in your GitHub, and then clone that instead. Clone this inside the Virtual Environment Directory created earlier. The following command will create a copy on your computer. 
     
-    `> git clone https://github.com/anishpradhan/BRS-Project.git`
+    `> git clone https://github.com/anishpradhan/BRS.git`
 
 ### Get the required packages
 
