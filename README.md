@@ -35,7 +35,7 @@ You have two choices for downloading the source code – downloading a zip file 
 
 Use pip to install the required files:
 
-`> pip3 install -r requirements.txt`
+`> pip install -r requirements.txt`
 
 ## 4. Database setup
 
@@ -115,8 +115,8 @@ WARNING: This might take a few seconds or even a minute.
 When the database connection is configured, you can run the following commands to create the databases that Django and this project need to run.
 
 ```bash
-	> python3 manage.py makemigrations
-	> python3 manage.py migrate (if this command doesnot work then use this > python3 manage.py migrate --run-syncdb)
+	> python manage.py makemigrations
+	> python manage.py migrate (if this command doesnot work then use this > python3 manage.py migrate --run-syncdb)
 ```
 
 ### Populate the database.
