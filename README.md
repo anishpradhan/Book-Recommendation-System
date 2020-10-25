@@ -32,6 +32,7 @@ You have two choices for downloading the source code – downloading a zip file 
     
 ```bash
 > git clone https://github.com/anishpradhan/BRS.git
+> cd BRS
 ```
 
 ### Get the required packages
