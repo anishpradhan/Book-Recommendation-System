@@ -1,0 +1,10 @@
+{% if item %}
+    {% if user.is_authenticated %}
+        <a href="{% url 'book_detail' item.id %}">{{ item.bookTitle }}</a> | Author - {{ item.bookAuthor }}
+    {% else %}
+        <b>{{ item.bookTitle }}</b> | Author - {{ item.bookAuthor }}
+    {% endif %}
+{% else %}
+{#    No result<br>#}
+{#    There were no results matching your search: "{{ query }}"#}
+{% endif %}

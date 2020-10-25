@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRS</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <p><a href="{% url 'home_api' %}">Home</a> | <a href="{% url 'logout' %}"> Logout</a></p>
+    <p>Hello, {{ request.user.username }} ji</p>
+{% else %}
+    <p><a href="{% url 'home_api' %}">Home</a> | <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a></p>
+
+{% endif %}
+
+<hr>
+{% block content  %}
+{% endblock %}
+</body>
+</html>
