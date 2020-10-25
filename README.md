@@ -14,7 +14,8 @@ Once you have confirmed you have virtualenv installed, create the virtual enviro
 
 ```bash
 > python -m venv BRS
-> BRS\Scripts\activate
+> cd BRS
+> Scripts\activate
 ```
 
 ## 3. Download source code
@@ -29,7 +30,9 @@ You have two choices for downloading the source code – downloading a zip file 
 
     Clone this repository or create a fork in your GitHub, and then clone that instead. Clone this inside the Virtual Environment Directory created earlier. The following command will create a copy on your computer. 
     
-    `> git clone https://github.com/anishpradhan/BRS.git`
+```bash
+> git clone https://github.com/anishpradhan/BRS.git
+```
 
 ### Get the required packages
 
