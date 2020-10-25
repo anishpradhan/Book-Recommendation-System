@@ -14,7 +14,7 @@ Once you have confirmed you have virtualenv installed, create the virtual enviro
 
 ```bash
 > python -m venv BRS
-> source BRS/Scripts/activate
+> BRS\Scripts\activate
 ```
 
 ## 3. Download source code
@@ -97,13 +97,19 @@ Update the USER, PASSWORD, HOST, and PORT fields:
 * USER(root): Use the user name you created with the BRS database
 * PASSWORD(): Use the password you created with the BRS database
 * HOST (localhost): localhost (if you have have installed it on your private machine)
-* PORT (db_port_number): 5432 (this is your mysql port number, you can find it from xampp control panel just beside MySQL)
+* PORT (db_port_number): 3306 (this is your mysql port number, you can find it from xampp control panel just beside MySQL)
 
 
 ## Create and populate the BRS databases
 
 Everyone must follow these steps, whether or not you are using MySQL.
-	
+
+### Run this script to create a necessary correlation file for your ML algorithm
+
+`> python create_correlation.py`
+
+WARNING: This might take a few seconds or even a minute.
+
 ### Create the BRS databases.
 		
 When the database connection is configured, you can run the following commands to create the databases that Django and this project need to run.
@@ -118,12 +124,6 @@ When the database connection is configured, you can run the following commands t
 Run the script by using these command to populate the databases with all the books and its information.
 	
 `> python populate_db.py`
-
-### Run this script to create a necessary correlation file for your ML algorithm
-
-`> python create_correlation.py`
-
-WARNING: This might take a few seconds or even a minute.
 
 ## Create Superuser for your project.
 
